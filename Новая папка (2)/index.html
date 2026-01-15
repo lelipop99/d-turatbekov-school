@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ky">
+<head>
+<meta charset="UTF-8">
+<title>Д.Туратбеков атындагы жалпы билим берүү мектеби</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+*{box-sizing:border-box}
+
+body{
+    margin:0;
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(180deg,#eef3ff,#ffffff);
+    color:#222;
+}
+
+/* HEADER */
+header{
+    background:linear-gradient(135deg,#163b7a,#4f8cff);
+    color:#fff;
+    text-align:center;
+    padding:80px 20px 90px;
+    border-bottom-left-radius:50px;
+    border-bottom-right-radius:50px;
+}
+header h1{margin:0;font-size:32px}
+header p{opacity:.9}
+
+/* NAV */
+nav{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    margin-top:-35px;
+    flex-wrap:wrap;
+}
+nav a{
+    background:#fff;
+    color:#163b7a;
+    padding:14px 24px;
+    border-radius:40px;
+    text-decoration:none;
+    font-weight:600;
+    box-shadow:0 12px 30px rgba(0,0,0,.15);
+    transition:.3s;
+}
+nav a:hover{
+    background:#163b7a;
+    color:#fff;
+    transform:translateY(-4px);
+}
+
+/* SECTION */
+section{
+    max-width:1200px;
+    margin:80px auto;
+    padding:0 20px;
+}
+h2{
+    text-align:center;
+    font-size:30px;
+    color:#163b7a;
+    margin-bottom:35px;
+}
+
+/* CARDS */
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+}
+.card{
+    background:#fff;
+    padding:30px 20px;
+    border-radius:26px;
+    text-align:center;
+    font-size:18px;
+    font-weight:600;
+    box-shadow:0 15px 35px rgba(0,0,0,.12);
+}
+
+/* FORMS */
+.form-box{
+    max-width:600px;
+    margin:0 auto 30px;
+    display:grid;
+    gap:15px;
+}
+.form-box input{
+    padding:14px;
+    border-radius:14px;
+    border:2px solid #163b7a;
+    font-size:16px;
+}
+.form-box button{
+    padding:14px;
+    border:none;
+    border-radius:30px;
+    background:linear-gradient(135deg,#163b7a,#4f8cff);
+    color:white;
+    font-weight:600;
+    cursor:pointer;
+}
+
+/* LIST ITEM */
+.item{
+    background:#fff;
+    padding:20px;
+    border-radius:20px;
+    margin-bottom:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,.1);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+.item button{
+    background:#ff4d4d;
+    color:white;
+    border:none;
+    border-radius:20px;
+    padding:8px 16px;
+    cursor:pointer;
+}
+
+/* FOOTER */
+footer{
+    background:#163b7a;
+    color:#fff;
+    text-align:center;
+    padding:30px;
+    border-top-left-radius:50px;
+    border-top-right-radius:50px;
+}
+</style>
+</head>
+<body>
+
+<header>
+<h1>Д.Туратбеков атындагы жалпы билим берүү мектеби</h1>
+<p>Боз-Булун айылы</p>
+</header>
+
+<nav>
+<a href="#subjects">Предметтер</a>
+<a href="#news">Жаңылыктар</a>
+<a href="#teachers">Мугалимдер</a>
+<a href="#contact">Байланыш</a>
+</nav>
+
+<!-- SUBJECTS -->
+<section id="subjects">
+<h2>Окутулган предметтер</h2>
+<div class="cards">
+<div class="card">📐 Математика</div>
+<div class="card">🧮 Алгебра</div>
+<div class="card">📐 Геометрия</div>
+<div class="card">📘 Кыргыз тили</div>
+<div class="card">📖 Кыргыз адабияты</div>
+<div class="card">🅰️ Орус тили</div>
+<div class="card">🌍 Англис тили</div>
+<div class="card">🧠 Информатика</div>
+<div class="card">📜 Тарых</div>
+<div class="card">🌏 География</div>
+<div class="card">⚗️ Физика</div>
+<div class="card">🧪 Химия</div>
+<div class="card">🌱 Биология</div>
+<div class="card">🏃‍♂️ Дене тарбия</div>
+<div class="card">🎵 Музыка</div>
+<div class="card">🎨 Сүрөт</div>
+<div class="card">🛠️ Эмгек</div>
+<div class="card">🏛️ Адам жана коом</div>
+</div>
+</section>
+
+<!-- NEWS -->
+<section id="news">
+<h2>Жаңылыктар</h2>
+
+<div class="form-box">
+<input id="newsInput" placeholder="Жаңылыкты жазыңыз...">
+<button onclick="addNews()">➕ Жаңылык кошуу</button>
+</div>
+
+<div id="newsList"></div>
+</section>
+
+<!-- TEACHERS -->
+<section id="teachers">
+<h2>Мугалимдер</h2>
+
+<div class="form-box">
+<input id="teacherName" placeholder="Мугалимдин аты-жөнү">
+<input id="teacherSubject" placeholder="Окуткан предмети">
+<button onclick="addTeacher()">➕ Мугалим кошуу</button>
+</div>
+
+<div id="teacherList"></div>
+</section>
+
+<section id="contact">
+<h2>Байланыш</h2>
+<p style="text-align:center;">📍 Кыргызстан, Боз-Булун айылы<br>📞 +996 XXX XX XX XX</p>
+</section>
+
+<footer>
+<p>© 2026 Д.Туратбеков атындагы жалпы билим берүү мектеби</p>
+</footer>
+
+<script>
+/* NEWS */
+function addNews(){
+    const input=document.getElementById("newsInput");
+    if(input.value.trim()==="")return;
+
+    const div=document.createElement("div");
+    div.className="item";
+    div.innerHTML=`<span>📰 ${input.value}</span>
+    <button onclick="this.parentElement.remove()">Өчүрүү</button>`;
+    document.getElementById("newsList").prepend(div);
+    input.value="";
+}
+
+/* TEACHERS */
+function addTeacher(){
+    const name=document.getElementById("teacherName");
+    const subject=document.getElementById("teacherSubject");
+    if(name.value===""||subject.value==="")return;
+
+    const div=document.createElement("div");
+    div.className="item";
+    div.innerHTML=`<span>👩‍🏫 ${name.value} — ${subject.value}</span>
+    <button onclick="this.parentElement.remove()">Өчүрүү</button>`;
+    document.getElementById("teacherList").append(div);
+
+    name.value="";
+    subject.value="";
+}
+</script>
+
+</body>
+</html>
